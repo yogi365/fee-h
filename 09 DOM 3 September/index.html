@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <p id="para1">This is a paragraph1</p>
+    <p class="class">This is a paragraph2</p>
+    <p>This is a paragraph3</p>
+    <div class="class">
+        <p>This is a paragraph4</p>
+        <p>This is a paragraph5</p>
+    </div>
+    <script>
+    // const p = document.getElementById('para1');
+    // p.innerText = "New dynamically added text";
+    // console.log(p);
+
+    // const  p = document.getElementsByTagName('p');
+    // const p = document.getElementsByClassName('class')
+    // for(let i=0;i<p.length;i++){
+    //     p[i].innerText = "New Text"
+    // }
+
+    // const p = document.querySelectorAll('p')
+    // console.log(p)
+
+    // const div = document.getElementsByTagName('p');
+    // const divNode = document.querySelectorAll('#para1');
+    // console.log(divNode);
+    // console.log(div);
+    // const p = document.createElement('p');
+    // p.innerText = "Dynamically created Para";
+    // document.body.append(p);
+    // console.log(divNode);
+    // console.log(div);
+
+    const div = document.querySelector('div');
+    // div.innerHTML = "<p>This is a para inside div.</p>";
+    // div.style.backgroundColor = "Red";
+    // div.style.color = "white";
+
+    div.style = "background-color:red;color:white"
+
+    </script>
+</body>
+</html>
