@@ -7,7 +7,7 @@ const employee = [
     },
     {
         id:2,
-        name:"Nas",
+        name:"Nash",
         days:29,
         salaryId:1
     }
@@ -40,6 +40,24 @@ const salary = [
 ]
 
 function calculateSalary(){
+    let salaries = [];
+    employee.forEach(emp=>{
+        let salarObject = salary.find(sal=> sal.salaryId == emp.salaryId);
+        let gross = salarObject.gross.base + salarObject.gross.hra;
+        let deduction = salarObject.deduction.tds + salarObject.deduction.pf;
+        let totalSalary = gross-deduction;
 
+        let date = new Date();
+        let month = date.getMonth();
+        let year = date.getFullYear();
+        let noOfDays = new Date(year,month,0).getDate();
+
+        let oneDaySalary = totalSalary/noOfDays;
+        let currentSalary = emp.days * oneDaySalary
+        salaries.push(currentSalary.toFixed(2));
+        // console.log(currentSalary);
+        
+    })
+    return salaries;
 }
-calculateSalary()
+console.log(calculateSalary());
