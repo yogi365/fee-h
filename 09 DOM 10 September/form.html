@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!-- <input onchange="fetchName()" type="text" id="txtName" placeholder="Enter Name"/> -->
+        <!-- <input onkeypress="fetchName()" type="text" id="txtName" placeholder="Enter Name"/> -->
+        <input onkeyup="fetchName(event)" type="text" id="txtName" placeholder="Enter Name"/>
+        <!-- <input type="text" id="txtName" placeholder="Enter Name"/> -->
+        <!-- <button onclick="fetchName()">Fetch Name</button> -->
+        <button>Fetch Name</button>
+        <br/>
+        <label id="lblName"></label>
+    </div>
+    <script>
+        // function fetchName(){
+        //     const txtName = document.querySelector('#txtName').value;
+        //     const lblName = document.querySelector('#lblName');
+        //     lblName.innerText = txtName;
+        // }
+
+        // function fetchName(){
+        //     document.querySelector('#lblName').innerText  = document.querySelector('#txtName').value;
+           
+        // }
+
+        function fetchName(event){
+            // const txtName = document.querySelector('#txtName').value;
+            // const lblName = document.querySelector('#lblName');
+            // lblName.innerText = txtName;
+            console.log(event);
+        }
+
+        const btn = document.querySelector('button');
+        // btn.onclick = fetchName();
+
+        btn.addEventListener('click',fetchName);
+
+        
+    </script>
+</body>
+</html>

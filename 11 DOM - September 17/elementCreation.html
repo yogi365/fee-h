@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Para 1</p>
+    <p>Para 2</p>
+    <p>Para 3</p>
+    <p>Para 4</p>
+    <p>Para 5</p>
+    <div class="list">
+        <ul id="odd">
+
+        </ul>
+
+        <ul id="even">
+
+        </ul>
+    </div>
+    <script>
+        // const p = document.createElement('p');
+        // p.innerText = "This is a paragraph";
+        // p.id="para1";
+        // p.style.fontSize ="24px";
+        // document.body.append(p)
+        // document.body.prepend(p)
+
+        const even = document.querySelector('#even');
+        const odd = document.querySelector('#odd');
+        for(let i = 0; i<21;i++){
+            const li = document.createElement('li');  
+            li.innerText = i          
+            if(i%2==0){
+                even.append(li)
+            }
+            else{
+                odd.append(li);
+            }
+
+        }
+    </script>
+</body>
+</html>

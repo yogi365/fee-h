@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bgColor{
+            background-color: red;
+            color:white;
+            font-size:24px;
+        }
+    </style>
+
+</head>
+<body>
+    <p  id="para1" data-value="newAttribute value">This is a paragraph1</p>
+    <p class="class">This is a paragraph2</p>
+    <p>This is a paragraph3</p>
+    <div class="class">
+        <p>This is a paragraph4</p>
+        <p>This is a paragraph5</p>
+    </div>
+    <script>
+    const p = document.getElementById('para1');
+    // console.log(p.innerText);
+    // p.innerText = "<strong>New value</strong>";
+    // p.innerHTML = "<strong>New value</strong>";
+    // console.dir(p);
+   
+    // p.style="background-color: red;"
+    // p.style.backgroundColor = "red";
+
+    // console.log(p.id);
+    // p.id = "newId";
+    // p.setAttribute('class','bgColor');
+    // p.classList = "bgColor";
+
+    var value = p.getAttribute('data-value');
+    console.log(value);
+
+
+    </script>
+</body>
+</html>

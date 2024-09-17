@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td{
+            border: 2px solid black;    
+        }
+    </style>
+</head>
+<body>
+    <div id="tableContainer">
+
+    </div>
+    <script>
+        const student = ["A","B","C","D","E"];
+        // const ul = document.createElement('ul');
+        // student.forEach(ele=>{
+        //     const li = document.createElement('li');
+        //     li.innerText = ele;
+        //     ul.append(li);
+        // })
+        // document.body.append(ul);
+
+        const table = document.createElement('table');
+        student.forEach(ele=>{
+            const tr = document.createElement('tr');
+            const td = document.createElement('td');
+            td.innerText = ele;
+            tr.append(td);
+            table.append(tr);
+        })
+        document.querySelector('#tableContainer').append(table)
+    </script>
+    
+</body>
+</html>
