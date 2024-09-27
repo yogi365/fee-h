@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fruits = ["Apple","Mango","Orange"];
+        const jsonFruits = JSON.stringify(fruits);
+        console.log(jsonFruits);
+        localStorage.setItem('fruits',jsonFruits);
+        // console.log(fruits);
+        // console.log(localStorage.getItem('fruits'));
+        var fs = JSON.parse(localStorage.getItem('fruits'));
+        fs.forEach(element => {
+                console.log(element);
+        });
+    </script>
+</body>
+</html>

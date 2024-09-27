@@ -1,0 +1,10 @@
+{
+    "name":"Abc",
+    "age":24,
+    "boolean":true,
+    "arr":[1,2,3,4],
+    "address":{
+        "street":"124 st",
+        "city":"banglore"
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inValid{
+            border:1px solid red;
+            outline:1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myform">
+        <input type="text" id="txtName" placeholder="Enter your name" /><br />
+        <input type="email" id="txtEmail" class="inValid" placeholder="Enter your Email" /> <br />
+        <input type="text" id="txtContact" placeholder="Enter contact Number" /> <br />
+        <input type="submit" />
+    </form>
+
+    <div>
+        <table id="empData" border="1">
+            <thead>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact Number</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var empArray = [];
+        // localStorage.removeItem('emph1')
+        window.onload = function () {
+            if (localStorage.getItem('emph1')) {
+                var empData = JSON.parse(localStorage.getItem('emph1'))                
+                empArray=empData;
+                console.log(empArray)
+                empArray.forEach(x => {
+                    createTable(x);
+                })
+            }
+            
+        }
+
+        document.querySelector('#myform').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const empObj = {
+                emp_name: document.querySelector('#txtName').value,
+                emp_email: document.querySelector('#txtEmail').value,
+                emp_contact: document.querySelector('#txtContact').value
+            }
+            createTable(empObj);
+            empArray.push(empObj);
+            localStorage.setItem('emph1', JSON.stringify(empArray));
+
+            document.querySelector('#txtName').value=""
+            document.querySelector('#txtEmail').value=""
+            document.querySelector('#txtContact').value=""
+        })
+
+        function createTable(empObj) {
+            const tr = document.createElement('tr');
+            for (key in empObj) {
+                const td = document.createElement('td');
+                td.innerText = empObj[key];
+                
+                tr.append(td);
+            }
+            const btnDelte = document.createElement('button');
+                btnDelte.innerText = "x"
+            tr.append(btnDelte);
+            btnDelte.addEventListener('click',(e)=>{
+                tr.remove();
+            })
+            document.querySelector('table tbody').append(tr);
+        }
+    </script>
+</body>
+
+</html>

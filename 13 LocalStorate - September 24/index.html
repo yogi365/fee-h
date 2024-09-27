@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txtName"/>
+    <button>Submit</button><br>
+    <label id="lblName"></label>
+    <script>
+        // document.querySelector('#lblName').innerText = sessionStorage.getItem("name")
+        // document.querySelector('button').addEventListener('click',function(){
+        //     const txtName = document.querySelector('#txtName').value;
+        //     sessionStorage.setItem("name",txtName);
+        //     document.querySelector('#lblName').innerText = sessionStorage.getItem("name")
+        // })
+
+        document.querySelector('#lblName').innerText = localStorage.getItem("name")
+        document.querySelector('button').addEventListener('click',function(){
+            const txtName = document.querySelector('#txtName').value;
+            localStorage.setItem("name",txtName);
+            document.querySelector('#lblName').innerText = localStorage.getItem("name")
+        })
+       
+    </script>
+    
+</body>
+</html>

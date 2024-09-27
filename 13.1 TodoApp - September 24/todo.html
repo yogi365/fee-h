@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="txtTask"/>
+    </div>
+    <div>
+        <ul id="tasks">
+
+        </ul>
+    </div>
+    <script>
+        document.querySelector('#txtTask').addEventListener('keyup',function(e){            
+            
+            if(e.key!="Enter"){
+                return
+            }
+            if(e.target.value==""){
+                alert('Task cannot be empty')
+                return;
+            }
+            const value = e.target.value
+            const li = document.createElement('li');
+            const div = document.createElement('div');
+            const checkBox = document.createElement('input');
+            checkBox.type='checkbox';
+            checkBox.addEventListener('change',function(){
+                if(checkBox.checked){                    
+                    
+                    div.style="font-weight:800"
+                }
+                else{
+                    div.style=""
+                }
+            })
+            const btn = document.createElement('button');
+            btn.addEventListener('click',()=>{
+                li.remove();
+            })
+
+            btn.innerText = "X";
+            div.innerText = value;
+            li.append(div,checkBox,btn);
+            document.querySelector('ul').append(li);
+            e.target.value ="";
+
+        })
+
+
+    </script>
+    
+</body>
+</html>
