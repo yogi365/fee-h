@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="txtName"/> <button id="btnClick">Click</button>
+    <label id="lblName"></label>
+    <button id="start">Start</button>
+    <button id="stop"> Stop</button>
+    <ul>
+
+    </ul>
+
+    <script>
+        // setTimeout(function(){
+        //     console.log("After delay of 2sec");
+        // },5000)
+        // var counter = 0;
+        // setInterval(function(){
+        //     // console.log("Calling after every 2 sec")
+        //     counter++;
+        //     console.log(counter);
+        // },2000)
+        var intervalIntance = null;
+        document.querySelector("#start").addEventListener('click',function(){
+            intervalIntance = setInterval(function(){
+                const li = document.createElement('li');
+                const date = new Date();
+                li.innerText = date.toLocaleTimeString();
+                document.querySelector('ul').append(li);
+            },1000)
+
+            // intervalIntance = setTimeout(function(){
+            //     const li = document.createElement('li');
+            //     const date = new Date();
+            //     li.innerText = date.toLocaleTimeString();
+            //     document.querySelector('ul').append(li);
+            // },2000)
+        })
+
+        document.querySelector('#stop').addEventListener('click',function(){
+            clearInterval(intervalIntance)
+            // clearTimeout(intervalIntance)
+        })
+
+        document.querySelector('#btnClick').addEventListener('click',function(){
+            document.querySelector('#lblName').innerText = document.querySelector('#txtName').value
+        })
+    </script>
+</body>
+</html>
