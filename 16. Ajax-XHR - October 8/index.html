@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const xhr = new XMLHttpRequest();
+        // xhr.open('get',"http://feecq.github.io/api/users.json",true);
+        xhr.open('get',"https://feecq.github.io/api/portfolio.jpg",true);
+        xhr.responseType="blob";
+        xhr.send();
+        // xhr.onreadystatechange = function(){
+        //     // console.log(xhr.readyState)
+        //     if(xhr.readyState==4){
+        //         console.log(xhr.response);
+        //     }
+        // }
+
+        xhr.onload = function(){
+            if(xhr.status==200){
+                // 
+                const img = document.createElement('img');
+                const url = URL.createObjectURL(xhr.response);
+                img.src = url;
+                img.style.width="400px";
+                img.style.height="800px";
+                document.body.prepend(img);
+            }
+        }
+
+        xhr.onprogress = function (e){
+            console.log(e);
+        }
+    </script>
+</body>
+</html>
